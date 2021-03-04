@@ -1,0 +1,5 @@
+ErrorDocument 404 /gerenciatarefa/visao/erro/400.php
+ErrorDocument 400 /gerenciatarefa/visao/erro/400.html
+ErrorDocument 500 /gerenciatarefa/visao/erro/500.html
+ErrorDocument 503 /gerenciatarefa/visao/erro/503.html
+

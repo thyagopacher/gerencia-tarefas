@@ -1,0 +1,3 @@
+                                        <li><a href="<?=$site?>/visao/compromisso/gerenciaCompromisso.php">Cadastrar Tarefas</a></li>
+                                        <li><a href="<?=$site?>/visao/compromisso/procuraCompromisso.php">Procurar Tarefas</a></li>  
+                                        <li><a href="<?=$site?>/visao/compromisso/quadroCompromisso.php">Quadro de compromissos</a></li> 

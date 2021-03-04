@@ -1,0 +1,21 @@
+/* 
+    Document   : inicio.css
+    Created on : 31/01/2013, 10:36:35
+    Author     : thyago
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+.login{
+    width: 300px;
+    margin: auto;
+}
+
+.imgLogin{
+    float: right;
+    margin-right: 100px;
+}
+
+.tituloSite{
+    font-family: 'Courier New',Courier,monospace;
+}

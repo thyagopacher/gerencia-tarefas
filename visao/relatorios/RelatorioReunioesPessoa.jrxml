@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="RelatorioReunioesPessoa" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="45d9527c-5a5e-4ecd-afd0-5b299fb13f78">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="codpessoa" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT
+r.data "Data",
+r.hora "Hora",
+r.assunto "Assunto"
+FROM reunioes_pessoa rp, reuniao r
+WHERE r.codigo = rp.codreuniao
+AND rp.codpessoa = $P{codpessoa}]]>
+	</queryString>
+	<field name="Data" class="java.sql.Date"/>
+	<field name="Hora" class="java.sql.Time"/>
+	<field name="Assunto" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<pageHeader>
+		<band height="35" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="9622aae3-4af0-4ce1-bd31-3d0ac07fe661" x="0" y="0" width="555" height="35"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="24"/>
+				</textElement>
+				<text><![CDATA[Lista de reunioes da Pessoa]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="96" splitType="Stretch">
+			<line>
+				<reportElement uuid="645f6ea8-e2fb-4801-9299-9c8676d12495" x="2" y="95" width="553" height="1"/>
+			</line>
+			<staticText>
+				<reportElement uuid="ef48fb9e-8edd-4fb8-90b6-88135cd0026f" x="1" y="0" width="100" height="20"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Data]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="531559c4-5c6f-453c-a1de-fc1e2ec84508" x="101" y="0" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{Data}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="7c119882-db59-401a-b05e-64eb0cdfe891" x="254" y="0" width="100" height="20"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Hora]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="591b1265-5a2d-47f1-8aef-6c2d5854b741" x="354" y="0" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{Hora}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="b2293f85-7d24-4528-b8ba-7ebd7240f366" x="1" y="20" width="100" height="20"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Assunto:]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="18c0cf95-4732-41ee-aaf0-3c6c400bb2fb" x="1" y="40" width="554" height="56"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{Assunto}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch">
+			<textField pattern="dd/MM/yyyy">
+				<reportElement uuid="54088e6c-a5db-4a41-9316-8897172b7362" x="0" y="0" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="b15c80b7-6595-4bd3-a36d-4ac6306da252" x="454" y="0" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="07c22104-a9fa-40fa-bd16-699562d09acb" x="0" y="29" width="555" height="25"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Desenvolvido por Megacia - A melhor empresa de desenvolvimento de sistemas do Brasil]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

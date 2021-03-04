@@ -1,0 +1,59 @@
+/* 
+    Document   : menuLateral
+    Created on : 31/01/2013, 12:16:02
+    Author     : thyago
+    Description:
+        Purpose of the stylesheet follows.
+*/
+#menuLateral ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	width: 150px;
+        float: left;
+}
+	
+#menuLateral ul li {
+	position: relative;
+        width: 150px;
+}
+
+#menuLateral li ul {
+	position: absolute;
+	left: 149px;
+	top: 0;
+	display: none;
+	}
+	
+#menuLateral li ul {
+	position: absolute;
+	left: 149px;
+	top: 0;
+	display: none;
+	}
+	
+#menuLateral ul li a {
+	display: block;
+	color: #777;
+	background: rgb(228, 228, 228);;
+	padding: 5px;
+	border: 1px solid #ccc;
+}
+
+#menuLateral ul a:hover{
+	background: white;
+        color: black;
+}
+	
+/* Fix IE. Hide from IE Mac \*/
+#menuLateral html ul li { float: left; height: 1%; }
+#menuLateral html ul li a { height: 1%; }
+/* End */
+
+#menuLateral li:hover ul { 
+    display: block; 
+}
+
+#menuLateral li:hover ul, #menuLateral li.over ul { 
+	display: block; 
+}
